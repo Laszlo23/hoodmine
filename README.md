@@ -1,32 +1,28 @@
-# React + TypeScript + Vite
+# HOOD//MINE
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A field on Robinhood Chain. The day’s map is seeded from an anchor block on chain 4663. You drag the field and cut a block.
 
-Currently, two official plugins are available:
+Live at https://mine.aibusiness.fun/.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## The footer
 
-## React Compiler
+The street bar is loaded from `https://doghood.aibusiness.fun/floor/street.js`. Book, Floor, Dex, GM, Mine, and Seats sit on the left. Field, Days, Agent, Pass, and Vein continue in `#hood-app` after the divider. If that script is missing, the five field tabs render on their own.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Play
 
-## Expanding the Oxlint configuration
+Robin opens the field. Three free cuts spend nothing. A find can give one back. After the free cuts, a paid cut spends the reserve. The agent spends reserve, not the free cuts. A find can be sealed with a zero-value transaction on Robinhood Chain. The wallet confirms that seal.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+The field state is kept in `localStorage` under `hoodmine-v2`.
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+## Run
+
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+```bash
+npm run build
+```
+
+The production page is the `dist/` folder.

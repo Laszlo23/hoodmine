@@ -55,7 +55,7 @@ ul, ol { padding: 0; list-style: none; }
 
 .app {
   min-height: 100dvh;
-  padding-bottom: calc(var(--dock) + 24px);
+  padding-bottom: 16px;
 }
 
 .top {
@@ -974,7 +974,7 @@ ul, ol { padding: 0; list-style: none; }
   z-index: 35;
   left: 16px;
   right: 16px;
-  bottom: calc(var(--dock) + 6px);
+  bottom: calc(70px + env(safe-area-inset-bottom));
   margin: 0;
   padding: 12px 14px;
   border-radius: 14px;
@@ -1004,7 +1004,7 @@ ul, ol { padding: 0; list-style: none; }
     max-width: 760px;
     margin: 0 auto;
   }
-  .nav { display: flex; gap: 4px; }
+  .nav { display: none; }
   .nav button {
     border: 0;
     background: transparent;
@@ -1017,7 +1017,6 @@ ul, ol { padding: 0; list-style: none; }
     text-transform: uppercase;
   }
   .nav button.on { background: var(--lime); color: var(--lime-ink); }
-  .dock { display: none; }
   .whisper, .plate, .meters, .fine, .panel, .crew { margin-left: 0; margin-right: 0; }
   .mine .meters { display: none; }
   .eyebrow-row { padding-left: 0; padding-right: 0; }
@@ -1032,11 +1031,11 @@ ul, ol { padding: 0; list-style: none; }
   .sheet-back { align-items: center; }
   .sheet { border-radius: 24px; margin: 24px; padding-bottom: 22px; }
   .grabber { display: none; }
-  .toast { left: auto; right: 28px; bottom: 28px; width: min(360px, calc(100vw - 48px)); }
+  .toast { left: auto; right: 28px; bottom: calc(78px + env(safe-area-inset-bottom)); width: min(360px, calc(100vw - 48px)); }
   .day { grid-template-columns: auto 1fr auto; align-items: center; }
   .day-side { grid-column: auto; flex-direction: column; align-items: flex-end; }
   .mine-row { margin-inline: 0; padding-inline: 0; grid-auto-columns: 1fr; }
-  .coach { bottom: 18px; left: auto; right: 24px; width: min(420px, 36vw); }
+  .coach { bottom: calc(78px + env(safe-area-inset-bottom)); left: auto; right: 24px; width: min(420px, 36vw); }
   .rite { align-items: center; }
 }
 
@@ -1063,7 +1062,7 @@ ul, ol { padding: 0; list-style: none; }
   z-index: 28;
   left: 12px;
   right: 12px;
-  bottom: calc(var(--dock) + 6px);
+  bottom: calc(78px + env(safe-area-inset-bottom));
   display: flex;
   gap: 12px;
   align-items: center;
